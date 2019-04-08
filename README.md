@@ -17,6 +17,10 @@ In this demo, you will learn how to plot with visual C++ and how to make and use
 * Non-MFC DLL(非MFC动态链接库)
 <br>不采用MFC类库结构，导出的函数为标准的C接口。能被非MFC或MFC编写的应用程序调用。
 * MFC Regular DLL(MFC规则动态库)
-<br>采用MFC类库编写，源文件中包含一个继承自CWinApp的类，但没有消息循环。可以分为静态链接到MFC库的规则DLL和动态链接倒MFC库的规则DLL。
+<br>采用MFC类库编写，源文件中包含一个继承自CWinApp的类，但没有消息循环。可以分为静态链接到MFC库的规则DLL和动态链接倒MFC库的规则DLL。不能导出MFC类及其派生类。
 * MFC Extension DLL(MFC扩展DLL)
-<br>只能被用MFC类库所写的应用程序调用。支持
+<br>只能被用MFC类库所写的应用程序调用。支持C++接口，即可以导出定义其内的类。
+### 导出函数
+DLL中的函数可以分为两种：导出函数和DLL内的函数。其中前者可以被应用程序调用，而后者只能在DLL程序中使用。DLL中导出函数的声明有两种：
+* 在定义函数时使用_declspec(dllexport)关键字
+* 创建模块定义文件(.def)，把导出函数名加入模块定义文件中。
