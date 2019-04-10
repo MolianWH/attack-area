@@ -29,10 +29,8 @@ In this demo, Firstly, you will learn how to plot with visual C++ . This is simp
 DLL中的函数可以分为两种：导出函数和DLL内的函数。其中前者可以被应用程序调用，而后者只能在DLL程序中使用。DLL中导出函数的声明有两种：
 * 在定义函数时**使用_declspec(dllexport)关键字**
 * 创建**模块定义文件(.def)**，把导出函数名加入模块定义文件中。
-<br>
-<br>本此demo中使用第一种方法；
+<br>此demo中使用第一种方法；
 <br>针对于第二种方法：
-<br>
 ```cpp
 //;demoDll.def:导出DLL函数。在.def文件中，注释以;开始
 LIBRARY "demoDll"  //动态链接库库名
@@ -44,7 +42,7 @@ EXPORTS
 两种调用方式：显式链接和隐式链接
 * **显式链接：**利用代码显示加载DLL，编译器不需要知道关于DLL的任何信息，比较灵活；
 * **隐式链接：**通过编译器提供给应用程序和关于DLL的名称DLL函数的链接地址，不需显式加载，方法简单，但缺少灵活性；
-<br>
+<br>=====================================================================================================
 * 显式链接
 过程如下：
 <br>LoadLibrary->GetProcAddress->FreeLibray
