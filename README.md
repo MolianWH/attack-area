@@ -1,9 +1,10 @@
 # attack-area
 In this demo, Firstly, you will learn how to plot with visual C++ . This is simple since only two functions are used. Secondly, the process of attack area formula push down is a little complex, however the code is simple. So in many situations, we need make DLL to protect the core idea. Then you will learn how to make and use DLL. This demo is not depend on MFC,but on console program. At last, I note some about the algorithm of attack area.  This concept is about Air-to Air missile.
 <br>This is the second time I wirte study notes on github. The details are oversimplified and I know little as a primary. But I will try to record as detailedly as I can. Just for study. Just for improvement. Just for fun.
-[DLL](##DLL)
-[GDI绘图](##GDI绘图)
-[attack area](##attack area)
+<br>
+* [DLL](https://github.com/MolianWH/attack-area/blob/master/README.md#dll)
+* [GDI绘图](https://github.com/MolianWH/attack-area/blob/master/README.md##GDI绘图)
+* [attack area](https://github.com/MolianWH/attack-area/blob/master/README.md##attack area)
 ## DLL
 ### Basic knowledge about DLL
 动态链接库(DLL，Dynamic Link Library)是在程序执行时，被动态地装载运行以完成一些通用功能的代码集合。它也是**可执行文件**，但不能像exe文件一样直接运行，而是**为其他可执行文件提供共享代码的库**。另外一种提供共享代码的方式是静态链接库，两者的区别是使用方法不同。
@@ -32,7 +33,7 @@ DLL中的函数可以分为两种：导出函数和DLL内的函数。其中前�
 <br>本此demo中使用第一种方法；
 <br>针对于第二种方法：
 <br>
-```
+```cpp
 ; demoDll.def:导出DLL函数。在.def文件中，注释以;开始
 LIBRARY "demoDll"  //动态链接库库名
 DISCRIPTION "实现一个Win32动态库"
@@ -50,7 +51,7 @@ EXPORTS
 <br>LoadLibrary->GetProcAddress->FreeLibray
 <br>加载->获取DLL函数地址->释放
 <br>示例代码如下：
-```
+```cpp
 //UseWinerDll.cpp
 #include "iostream.h"
 #include <stdio.h>
@@ -81,7 +82,7 @@ int main()
 ```
 <br>
 * 隐式链接
-```
+```cpp
 #pragma comment(lib,"Win32dll.lib")
 extern _declspec(dllimport) float calculate(float x,float y,int type);
 ```
