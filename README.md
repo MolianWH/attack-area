@@ -80,9 +80,7 @@ int main()
 #pragma comment(lib,"Win32dll.lib")
 extern _declspec(dllimport) float calculate(float x,float y,int type);
 ```
-<br>
 ## GDI绘图
 利用MoveToEx()和LineTo()函数。需要注意的是屏幕坐标定义方式。
 <br>如果单从函数图像绘制角度来讲，matlab才是更好的工具，而且作为数学专业的我，对此更为熟悉。对于任何函数，只消两三行代码就可以画出完美的函数图像。如果想用C++调用的话，可以利用matlab生成动态库（mcc -W cpplib:LibFileName -T link:lib fileName.m）。但是工作中，就要按领导要求来做了，作为尝试和学习，也挺好的。
-<br>
 ## attack area
