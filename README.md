@@ -4,7 +4,7 @@ In this demo, Firstly, you will learn how to plot with visual C++ . This is simp
 <br>
 * [DLL](https://github.com/MolianWH/attack-area/blob/master/README.md#dll)
 * [GDI绘图](https://github.com/MolianWH/attack-area/blob/master/README.md##GDI绘图)
-* [attack area](https://github.com/MolianWH/attack-area/blob/master/README.md##attack area)
+* [attack-area](https://github.com/MolianWH/attack-area/blob/master/README.md##attack area)
 ## DLL
 ### Basic knowledge about DLL
 动态链接库(DLL，Dynamic Link Library)是在程序执行时，被动态地装载运行以完成一些通用功能的代码集合。它也是**可执行文件**，但不能像exe文件一样直接运行，而是**为其他可执行文件提供共享代码的库**。另外一种提供共享代码的方式是静态链接库，两者的区别是使用方法不同。
@@ -34,13 +34,12 @@ DLL中的函数可以分为两种：导出函数和DLL内的函数。其中前�
 <br>针对于第二种方法：
 <br>
 ```cpp
-; demoDll.def:导出DLL函数。在.def文件中，注释以;开始
+//;demoDll.def:导出DLL函数。在.def文件中，注释以;开始
 LIBRARY "demoDll"  //动态链接库库名
 DISCRIPTION "实现一个Win32动态库"
 EXPORTS
       myplot @1   //导出函数名，@1表示指定函数序列号
 ```
-<br>
 ### DLL调用
 两种调用方式：显式链接和隐式链接
 * **显式链接：**利用代码显示加载DLL，编译器不需要知道关于DLL的任何信息，比较灵活；
