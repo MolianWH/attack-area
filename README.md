@@ -41,8 +41,7 @@ EXPORTS
 两种调用方式：**显式链接和隐式链接**
 * 显式链接：利用代码显示加载DLL，编译器不需要知道关于DLL的任何信息，比较灵活；
 * 隐式链接：通过编译器提供给应用程序和关于DLL的名称DLL函数的链接地址，不需显式加载，方法简单，但缺少灵活性；
-<br>
-* 显式链接
+#### 显式链接
 过程如下：
 <br>LoadLibrary->GetProcAddress->FreeLibray
 <br>加载->获取DLL函数地址->释放
@@ -76,7 +75,7 @@ int main()
   return 0;
 }
 ```
-* 隐式链接
+#### 隐式链接
 ```cpp
 #pragma comment(lib,"Win32dll.lib")
 extern _declspec(dllimport) float calculate(float x,float y,int type);
